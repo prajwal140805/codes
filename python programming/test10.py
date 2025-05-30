@@ -25,8 +25,6 @@ lib.add_book("1984")
 lib.add_book("To Kill a Mockingbird")
 
 lib.print_books()
-lib.print_books()
-
 print("Total number of books:", lib.get_no_of_books())
 
 # Demonstrate non-persistence
