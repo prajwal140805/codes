@@ -1,19 +1,22 @@
 import requests
 import html
 import random
+import  os
 
 print("_______________________________________________________________________________________________ ")
 print('\n')
 print("*******************************WELCOME TO KAUN BANEGA CROREPATI*******************************")
 
-# Game intro
+ 
 while True:
     print("********************************press ENTER key to continue**********************************")
     print("_______________________________________________________________________________________________ ")
     print('\n')
     c = input()
     if c == '':
+        os.system('cls')
         break
+    
 
 print("****************************************Game Rules********************************************")
 print("1. 10 questions will be fetched from an online trivia database.")
@@ -28,6 +31,7 @@ while True:
     c = input(
         "******************************press ENTER key to start the game********************************")
     if c == '':
+        os.system('cls')
         break
 
 # Fetch questions from Open Trivia DB
@@ -84,10 +88,12 @@ for i, q in enumerate(questions):
         print("Press ENTER to continue or type 'q' to quit:")
         b = input()
         if b.lower() == 'q':
+            os.system('cls')
             print("You have exited the game.")
             print("You have won rupees: ", amount)
             break
         elif b == '':
+            os.system('cls')
             continue
         else:
             break

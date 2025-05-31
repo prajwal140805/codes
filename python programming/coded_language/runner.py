@@ -16,9 +16,9 @@ while (True):
     if choice =='1':
         import subprocess
         subprocess.run(
-            ["python", "python programming/coded_language/test7_encode.py"])
+            ["python", "python programming/coded_language/encode.py"])
     elif choice =='2':
-        from test7_decode import Decode
+        from  decode import Decode
         Decode()
 
     elif choice =='3':
