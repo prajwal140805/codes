@@ -14,6 +14,7 @@ import os
 def clear_clutter_and_rename(folder_path):
     # Get all files in the folder
     files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    
 
     # Dictionary to hold files by extension
     files_by_ext = {}

@@ -13,11 +13,6 @@ for i in range(a,b):
 # for i in range(c,d):
 #     os.remove (f'c++programming/test{i}.cpp') 
 
-
-
-
-
-
 with open ('python programming/test3.py', 'r') as f:
     f.seek(0)
     print(f.read( ))

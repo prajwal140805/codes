@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include <ctime>
+ 
 void drawboard(char *spaces);
 void playermove(char *spaces, char player);
 void computermove(char *spaces, char computer);
@@ -67,23 +67,70 @@ void playermove(char *spaces, char player)
             spaces[number] = player;
             break;
         }
-    } while (!number > 0 || !number < 8);
+    } while (number < 0 || number > 8 || spaces[number] != ' ');
 }
 
 void computermove(char *spaces, char computer)
 {
-    int number;
-    srand(time(0));
-    while (true)
+     cout << "\n";
+    char player = (computer == 'X') ? 'O' : 'X';
+    for (int i = 0; i < 9; i++)
     {
-        number = rand() % 9;
-        if (spaces[number] == ' ')
+        if (spaces[i] == ' ')
         {
-            spaces[number] = computer;
-            break;
+            spaces[i] = computer;
+            if (checkwin(spaces, player , computer))
+                return;
+            spaces[i] = ' ';  
+        }
+    }
+
+     
+    
+    for (int i = 0; i < 9; i++)
+    {
+        if (spaces[i] == ' ')
+        {
+            spaces[i] = player;
+            if (checkwin(spaces, player,computer))
+            {
+                spaces[i] = computer;
+                return;
+            }
+            spaces[i] = ' ';  
+        }
+    }
+
+     
+    if (spaces[4] == ' ')
+    {
+        spaces[4] = computer;
+        return;
+    }
+
+    // Step 4: Take a corner if available
+    int corners[] = {0, 2, 6, 8};
+    for (int i : corners)
+    {
+        if (spaces[i] == ' ')
+        {
+            spaces[i] = computer;
+            return;
+        }
+    }
+
+    // Step 5: Take a side
+    int sides[] = {1, 3, 5, 7};
+    for (int i : sides)
+    {
+        if (spaces[i] == ' ')
+        {
+            spaces[i] = computer;
+            return;
         }
     }
 }
+
 bool checkwin(char *spaces, char player, char computer)
 {
     if ((spaces[0] != ' ') && (spaces[0] == spaces[1]) && (spaces[1] == spaces[2]))
