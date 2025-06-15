@@ -1,5 +1,5 @@
 from os import system
-text = "hello world"
+text = "Question Bank for CIE -2 2025 dt. 14/06/2025 Define Indian Constitution? and its features? Write the significance of fundamental duties of the citizens of IndiaDefine union executive? Explain the powers of the President of India What is Writ? Explain the different types of Writs to enforce fundamental rights Explain the electoral process in India and powers of the Election Commission  Elaborate the procedure of amendment under Article 368 and list out important amendments Elucidate the classification of fundamental rights Explain the role of directive principles under Indian Constitution Explain the types of jurisdiction of Supreme Court of India Write all the fundamental duties "
  
 system('powershell -Command "Add-Type -AssemblyName System.Speech; '
 f'(New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak(\'{text}\')"')      

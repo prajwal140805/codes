@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Café Ordering System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf6e3;
+      margin: 30px;
+    }
+    h1 {
+      color: #4b2e83;
+    }
+    label, select, input, button {
+      font-size: 16px;
+      margin: 10px 0;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+    }
+    button {
+      background-color: #4b2e83;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #6b4da3;
+    }
+    #orderList {
+      margin-top: 20px;
+      padding: 10px;
+      background: #eee;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Café Ordering System</h1>
+
+  <label for="category">Select Category:</label>
+  <select id="category" onchange="updateItems()">
+    <option value="">--Choose Category--</option>
+  </select>
+
+  <label for="item">Select Item:</label>
+  <select id="item">
+    <option value="">--Choose Item--</option>
+  </select>
+
+  <label for="quantity">Enter Quantity:</label>
+  <input type="number" id="quantity" min="1" placeholder="Enter quantity" />
+
+  <button onclick="addToOrder()">Add to Order</button>
+  <button onclick="generateBill()">Generate Bill</button>
+
+  <div id="orderList"></div>
+
+  <script>
+    const menu = {
+      "Starters": {
+        "Panner Chilli": 120,
+        "Pav Bhaji": 90,
+        "Gobi Manchurian": 100
+      },
+      "Main Course": {
+        "North Indian Thali": 180,
+        "South Indian Thali": 160,
+        "Paneer Masala": 140
+      },
+      "Desserts": {
+        "Pastry": 50,
+        "Ice Cream": 60,
+        "Brownie": 90
+      },
+      "Beverages": {
+        "Coffee": 30,
+        "Chai": 20,
+        "Lassi": 50
+      }
+    };
+
+    const orders = [];
+
+    // Load categories
+    const categorySelect = document.getElementById("category");
+    const itemSelect = document.getElementById("item");
+
+    for (let category in menu) {
+      const option = document.createElement("option");
+      option.value = category;
+      option.text = category;
+      categorySelect.add(option);
+    }
+
+    function updateItems() {
+      itemSelect.innerHTML = `<option value="">--Choose Item--</option>`;
+      const selectedCategory = categorySelect.value;
+      if (menu[selectedCategory]) {
+        for (let item in menu[selectedCategory]) {
+          const option = document.createElement("option");
+          option.value = item;
+          option.text = item;
+          itemSelect.add(option);
+        }
+      }
+    }
+
+    function addToOrder() {
+      const category = categorySelect.value;
+      const item = itemSelect.value;
+      const qty = parseInt(document.getElementById("quantity").value);
+
+      if (!category || !item || isNaN(qty) || qty <= 0) {
+        alert("Please select valid category, item and quantity.");
+        return;
+      }
+
+      const price = menu[category][item];
+      const total = qty * price;
+      orders.push({ item, qty, price, total });
+
+      updateOrderList();
+      document.getElementById("quantity").value = '';
+    }
+
+    function updateOrderList() {
+      const list = document.getElementById("orderList");
+      list.innerHTML = "<h3>Current Order:</h3><ul>";
+      let totalAmount = 0;
+      orders.forEach(o => {
+        list.innerHTML += `<li>${o.item} x ${o.qty} = ₹${o.total}</li>`;
+        totalAmount += o.total;
+      });
+      list.innerHTML += `</ul><strong>Total so far: ₹${totalAmount}</strong>`;
+    }
+
+    function generateBill() {
+      if (orders.length === 0) {
+        alert("No items in the order!");
+        return;
+      }
+
+      let final = "----- BILL -----\n";
+      let total = 0;
+      orders.forEach(o => {
+        final += `${o.item} x ${o.qty} = ₹${o.total}\n`;
+        total += o.total;
+      });
+      final += `--------------------\nTOTAL: ₹${total}`;
+      alert(final);
+    }
+  </script>
+</body>
+</html>
