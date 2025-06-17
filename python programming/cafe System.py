@@ -51,9 +51,16 @@ menu = {
     '7': {'category': "beverages", 'items': {
         '1': {'item': "Coffee", 'price': 30},
         '2': {'item': "Chai", 'price': 20},
-        '3': {'item': "Coke", 'price': 40},
+        '3': {'item': "Chocolate Milk Shake ", 'price': 60},
         '4': {'item': "Lassi", 'price': 50},
         '5': {'item': "Mango Shake", 'price': 60},
+    }},
+    '8': {'category': "Mountain dew", 'items': {
+        '1': {'item': "sprite", 'price': 45},
+        '2': {'item': "Mirinda", 'price': 45},
+        '3': {'item': "Coke", 'price': 45},
+        '4': {'item': "sting", 'price': 20},
+        '5': {'item': "pepsi", 'price': 45},
     }},
 }
 
