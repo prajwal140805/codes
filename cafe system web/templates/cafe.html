@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Café Ordering System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>☕ Café Ordering System</h1>
+
+    <form method="POST">
+      <label>Select Category:</label>
+      <select name="category" required onchange="this.form.submit()">
+        <option value="">-- Choose Category --</option>
+        {% for category in menu %}
+        <option value="{{ category }}" {% if category==selected_category %}selected{% endif %}>
+          {{ category }}
+        </option>
+        {% endfor %}
+      </select>
+
+      {% if selected_category %}
+      <label>Select Item:</label>
+      <select name="item" required>
+        <option value="">-- Choose Item --</option>
+        {% for item, price in menu[selected_category].items() %}
+        <option value="{{ item }}">{{ item }} - ₹{{ price }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Quantity:</label>
+      <input type="number" name="quantity" min="1" required>
+      {% endif %}
+
+      <div class="button-group">
+        {% if selected_category %}
+        <button type="submit" name="action" value="add">Add to Order</button>
+        {% endif %}
+        <button type="submit" name="action" value="bill">Generate Bill</button>
+        <button type="submit" name="action" value="clear">Clear Order</button>
+      </div>
+    </form>
+
+    {% if orders %}
+    <div class="current-order">
+      <h2>🛒 Current Order</h2>
+      <ul>
+        {% for order in orders %}
+        <li>{{ order.item }} ({{ order.category }}) x {{ order.qty }} = ₹{{ order.total }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if bill %}
+    <div class="bill">
+      <h2>🧾 Final Bill</h2>
+      <ul>
+        {% for item in bill %}
+        <li>{{ item.item }} ({{ item.category }}) x {{ item.qty }} = ₹{{ item.total }}</li>
+        {% endfor %}
+      </ul>
+      <h3>Total: ₹{{ total_amt }}</h3>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
