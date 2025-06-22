@@ -1,68 +1,6 @@
 import msvcrt
 import os
-
-menu = {
-    '1': {'category': "starters", 'items': {
-        '1': {'item': "Panner Chilli", 'price': 120},
-        '2': {'item': "Pav Bhaji", 'price': 90},
-        '3': {'item': "Gobi Manchurian", 'price': 100},
-        '4': {'item': "Mushroom Manchurian", 'price': 110},
-        '5': {'item': "Chicken Chilli", 'price': 130},
-    }},
-    '2': {'category': "main course", 'items': {
-        '1': {'item': "North Indian Thali", 'price': 180},
-        '2': {'item': "South Indian Thali", 'price': 160},
-        '3': {'item': "Non Veg Thali", 'price': 200},
-        '4': {'item': "Kaju Masala", 'price': 150},
-        '5': {'item': "Veg Curry", 'price': 130},
-        '6': {'item': "Paneer Masala", 'price': 140},
-        '7': {'item': "Mixed Veg Curry", 'price': 130},
-        '8': {'item': "Butter Naan", 'price': 30},
-        '9': {'item': "Garlic Naan", 'price': 40},
-    }},
-    '3': {'category': "rice", 'items': {
-        '1': {'item': "Chicken Biryani", 'price': 150},
-        '2': {'item': "Hyderabadi Chicken Biryani", 'price': 170},
-        '3': {'item': "Ghee Rice", 'price': 100},
-        '4': {'item': "Jeera Rice", 'price': 80},
-        '5': {'item': "Paneer Rice", 'price': 120},
-    }},
-    '4': {'category': "south indian", 'items': {
-        '1': {'item': "Idli Vada", 'price': 60},
-        '2': {'item': "Masala Dosa", 'price': 70},
-        '3': {'item': "Puri", 'price': 60},
-        '4': {'item': "Set Dosa", 'price': 65},
-        '5': {'item': "Uttapam", 'price': 70},
-    }},
-    '5': {'category': "fast food", 'items': {
-        '1': {'item': "Samosa", 'price': 20},
-        '2': {'item': "Pani Puri", 'price': 30},
-        '3': {'item': "Veg Burger", 'price': 70},
-        '4': {'item': "Chicken Burger", 'price': 90},
-        '5': {'item': "French Fries", 'price': 60},
-    }},
-    '6': {'category': "desserts", 'items': {
-        '1': {'item': "Pastry", 'price': 50},
-        '2': {'item': "Ice Cream", 'price': 60},
-        '3': {'item': "Apple Pie", 'price': 70},
-        '4': {'item': "Almond Malai Kulfi", 'price': 80},
-        '5': {'item': "Chocolate Brownies", 'price': 90},
-    }},
-    '7': {'category': "beverages", 'items': {
-        '1': {'item': "Coffee", 'price': 30},
-        '2': {'item': "Chai", 'price': 20},
-        '3': {'item': "Chocolate Milk Shake ", 'price': 60},
-        '4': {'item': "Lassi", 'price': 50},
-        '5': {'item': "Mango Shake", 'price': 60},
-    }},
-    '8': {'category': "Mountain dew", 'items': {
-        '1': {'item': "sprite", 'price': 45},
-        '2': {'item': "Mirinda", 'price': 45},
-        '3': {'item': "Coke", 'price': 45},
-        '4': {'item': "sting", 'price': 20},
-        '5': {'item': "pepsi", 'price': 45},
-    }},
-}
+from cafe_menu import menu
 
 orders = []  # Store selected orders
 
