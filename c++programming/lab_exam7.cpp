@@ -1,10 +1,9 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-int main()
-{ fstream file;
-    while (true)
-    {file.open("sample.txt", ios::out|ios::app );
+int main(){
+    fstream file;
+    file.open("sample.txt", ios::out);
     if (!file)
     {
         cout << "Error in creating file!!!" << endl;
@@ -15,28 +14,15 @@ int main()
         cout << "File created successfully." << endl;
     }
      file << "This is a sample text file." << endl;
-      
     file.close();
-
     file.open("sample.txt", ios::in);
-    if (!file)
-    {
+    if (!file){
         cout << "Error in opening file!!!" << endl;
-        return 0;
-    }
-
+        return 0;}
     char ch;
     cout << "File content: " << endl;
     while (file >> noskipws >> ch)  // read noskipws ensures spaces are read
-    {
-        
-        {
-            cout << ch;
-        }
-    }
-
-    file.close();}
-   
-    
+    {cout << ch;}
+    file.close();
     return 0;
 }
