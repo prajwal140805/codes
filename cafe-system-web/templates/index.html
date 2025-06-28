@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cafe Ordering System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>big bites</h1>
+
+  <label for="category">Select Category:</label>
+  <select id="category" onchange="updateItems()">
+    <option value="">--Choose Category--</option>
+  </select>
+
+  <label for="item">Select Item:</label>
+  <select id="item">
+    <option value="">--Choose Item--</option>
+  </select>
+
+  <label for="quantity">Enter Quantity:</label>
+  <input type="number" id="quantity" min="1" placeholder="Enter quantity" />
+
+  <button onclick="addToOrder()">Add to Order</button>
+
+  <label for="billInput">Type 'bill' to view final bill:</label>
+  <input type="text" id="billInput" placeholder="Type 'bill' and press Enter" onkeyup="checkBill(event)" />
+
+  <div id="orderList"></div>
+
+  <script type="text/javascript">
+    const menu = {{ menu | tojson }};
+    const orders = [];
+
+    const categorySelect = document.getElementById("category");
+    const itemSelect = document.getElementById("item");
+
+    for (let category in menu) {
+      const option = document.createElement("option");
+      option.value = category;
+      option.text = category;
+      categorySelect.add(option);
+    }
+
+    function updateItems() {
+      itemSelect.innerHTML = `<option value="">--Choose Item--</option>`;
+      const selectedCategory = categorySelect.value;
+      if (menu[selectedCategory]) {
+        for (let item in menu[selectedCategory]) {
+          const option = document.createElement("option");
+          option.value = item;
+          option.text = item;
+          itemSelect.add(option);
+        }
+      }
+    }
+
+    function addToOrder() {
+      const category = categorySelect.value;
+      const item = itemSelect.value;
+      const qty = parseInt(document.getElementById("quantity").value);
+
+      if (!category || !item || isNaN(qty) || qty <= 0) {
+        alert("Please select valid category, item and quantity.");
+        return;
+      }
+
+      const price = menu[category][item];
+      const total = qty * price;
+      orders.push({ item, qty, price, total });
+
+      updateOrderList();
+      document.getElementById("quantity").value = '';
+    }
+
+    function updateOrderList() {
+      const list = document.getElementById("orderList");
+      list.innerHTML = "<h3>Current Order:</h3><ul>";
+      let totalAmount = 0;
+      orders.forEach(o => {
+        list.innerHTML += `<li>${o.item} x ${o.qty} = ₹${o.total}</li>`;
+        totalAmount += o.total;
+      });
+      list.innerHTML += `</ul><strong>Total so far: ₹${totalAmount}</strong>`;
+    }
+
+    function checkBill(e) {
+      if (e.key === "Enter") {
+        const input = document.getElementById("billInput").value.trim().toLowerCase();
+        if (input === "bill") generateBill();
+      }
+    }
+
+    function generateBill() {
+      if (orders.length === 0) {
+        alert("No items in the order!");
+        return;
+      }
+
+      let final = "----- BILL -----\\n";
+      let total = 0;
+      orders.forEach(o => {
+        final += `${o.item} x ${o.qty} = ₹${o.total}\\n`;
+        total += o.total;
+      });
+      final += `--------------------\\nTOTAL: ₹${total}`;
+      alert(final);
+    }
+  </script>
+</body>
+</html>

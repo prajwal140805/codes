@@ -1,0 +1,37 @@
+ body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #EDC27B;
+  margin: 30px;
+}
+h1 {
+  color: #4b2e83;
+}
+label, select, input, button {
+  font-size: 16px;
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  background-color: rgb(244, 217, 173);
+}
+button {
+  background-color: rgb(81, 63, 31);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+}
+#orderList {
+  margin-top: 20px;
+  padding: 10px;
+  background: #0f1732;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 288px;
+}

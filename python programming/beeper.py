@@ -1,10 +1,10 @@
 import winsound
 import os
-while True:
 
-    print("	Pain relief, physical tension release")
-    winsound.Beep(32767,10000000)
-    os.system('cls')
+
+print("	Pain relief, physical tension release")
+winsound.Beep(32767,5000)
+os.system('cls')
     # print("	Pain relief, physical tension release")
     # winsound.Beep(174  ,5000)
     # os.system('cls')
