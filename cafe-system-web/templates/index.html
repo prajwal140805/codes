@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cafe Ordering System</title>
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
+
+  <title>Big Bites</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
 
-  <h1>big bites</h1>
+<body>
+<div class="container">
+ <h1>big bites</h1>
+  <img src="https://b.zmtcdn.com/data/pictures/chains/0/19726040/6ed6eef0f2006bd52e62a8287157c7de.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" alt="Cafe Logo" style="width: 300px; height: auto;">
 
   <label for="category">Select Category:</label>
   <select id="category" onchange="updateItems()">
@@ -28,6 +32,9 @@
   <input type="text" id="billInput" placeholder="Type 'bill' and press Enter" onkeyup="checkBill(event)" />
 
   <div id="orderList"></div>
+  <br>
+    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?cs=srgb&dl=pexels-pixabay-262978.jpg&fm=jpg" alt="Cafe Logo" style="width: 300px; height: auto;">
+  
 
   <script type="text/javascript">
     const menu = {{ menu | tojson }};
@@ -92,21 +99,48 @@
       }
     }
 
-    function generateBill() {
-      if (orders.length === 0) {
-        alert("No items in the order!");
-        return;
-      }
+ function generateBill() {
+  if (orders.length === 0) {
+    alert("No items in the order!");
+    return;
+  }
 
-      let final = "----- BILL -----\\n";
-      let total = 0;
-      orders.forEach(o => {
-        final += `${o.item} x ${o.qty} = ₹${o.total}\\n`;
-        total += o.total;
-      });
-      final += `--------------------\\nTOTAL: ₹${total}`;
-      alert(final);
-    }
+  let final = "--------------- BILL ---------------\n";
+  let total = 0;
+
+  orders.forEach(o => {
+    final += `${o.item} x ${o.qty} = ₹${o.total}\n`;
+    total += o.total;
+  });
+
+  final += "------------------------------------\n";
+  final += `TOTAL: ₹${total}`;
+
+  alert(final);
+}
+
   </script>
+</div>
+<div class="footer">
+  
+  2025 Big Bites Cafe. All rights reserved.®<br>
+  Developed by Prajwal Magishettar<br>
+  
+  Contact:808860####<br>
+  follow me on github: <br> 
+ <a href="https://github.com/prajwal140805"target="https://github.com/prajwal140805">https://github.com/prajwal140805</a><br>
+ follow me on instagram:  <br>
+ <a href="https://www.instagram.com/prajwal_magishettar"target="https://www.instagram.com/prajwal_magishettar">https://www.instagram.com/prajwalmagishettar</a><br>
+  Follow me on Twitter:<br>
+  <a href="https://x.com/PrajwalM2431" target="https://x.com/PrajwalM2431">https://x.com/PrajwalMagishettar</a><br>
+ Follow me on LinkedIn:<br>
+ <a href="https://www.linkedin.com/in/prajwal-magishettar-15918a330/" target="https://www.linkedin.com/in/prajwal-magishettar-15918a330/">https://www.linkedin.com/in/prajwalmagishettar</a><br>
+  Follow me on Facebook:<br>
+  <a href="https://www.facebook.com/profile.php?id=61565414769730" target="https://www.facebook.com/profile.php?id=61565414769730">https://www.facebook.com/prajwalmagishettar</a>
+  
+</div>
+
+
+ 
 </body>
 </html>

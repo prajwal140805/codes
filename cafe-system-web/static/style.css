@@ -1,37 +1,131 @@
- body {
+body {
   font-family: 'Segoe UI', sans-serif;
-  background: #EDC27B;
-  margin: 30px;
+  background: rgb(164, 70, 70);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 h1 {
   color: #4b2e83;
+  text-align: center;
 }
+
 label, select, input, button {
   font-size: 16px;
   margin: 10px 0;
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   background-color: rgb(244, 217, 173);
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  box-sizing: border-box;
 }
+
 button {
   background-color: rgb(81, 63, 31);
-  color: rgb(255, 255, 255);
+  color: white;
   font-weight: bold;
-  padding: 10px;
-  border: none;
   cursor: pointer;
-  border-radius: 5px;
 }
+
 button:hover {
   background-color: rgb(0, 255, 0);
-  color: rgb(0, 0, 0);
+  color: black;
 }
+
 #orderList {
   margin-top: 20px;
   padding: 10px;
   background: #0f1732;
   color: #fff;
   border-radius: 10px;
-  max-width: 288px;
+  max-width: 280px;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+@media only screen and (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  select, input, button, label {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  #orderList {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+.container {
+  background: #EDC27B;
+  max-width: 330px;
+  align-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  margin: 10px auto;
+  border-color: #ffffff;
+  width: 46%;
+  border-width: 330px;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 30px;
+   /* background-color: #0f1732;
+  height: 10px;
+  width: 90%;
+  margin: 10px auto; */ 
+}
+.footer{
+  
+  /* text-align: center; */
+   border-color: #ffffff;
+  border-style: solid;
+  border-width: 10px;
+  margin-top: px;
+  color: #000000;
+  padding: 10px;
+  background-color: #f4d9ad;
+  border-radius: 30px;
+} 
+
+/* Force full-width and readable text */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 10px; /* Adds breathing room */
+  width: 100%;
+}
+
+/* Improve form elements */
+select, input, button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px; /* Prevents iOS zooming */
+  margin-bottom: 10px;
+}
+
+/* Make buttons touch-friendly */
+button {
+  padding: 12px;
+  background: #4CAF50; /* Example color */
+  color: white;
+  border: none;
+  border-radius: 4px;
 }
