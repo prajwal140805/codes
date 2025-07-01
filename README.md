@@ -1,4 +1,4 @@
-<h1>Welcome to my codes</h1>
+# Welcome to my codes
 
 <br>
 Author - Prajwal kumar Magishettar
