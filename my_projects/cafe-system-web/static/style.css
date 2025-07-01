@@ -1,0 +1,196 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: rgb(164, 70, 70);
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #4b2e83;
+  text-align: center;
+  font-size: 70px;
+}
+
+label,
+select,
+input,
+button {
+  font-size: 30px;
+  margin: 10px 0;
+  display: block;
+  width: 80%;
+  max-width: 80%;
+  height: 100px;
+  background-color: rgb(244, 217, 173);
+  border-radius: 20px;
+  border-color: rgb(175, 162, 133);
+  border-width: 4px;
+    border-style: outset;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+button:hover {
+  background-color: rgb(0, 255, 0);
+  color: black;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border-color:rgb(175, 162, 133);
+  border-style: outset;
+  border-width: 4px;
+}
+
+#orderList {
+  margin-top: 20px;
+  padding: 10px;
+  background: #0f1732;
+  color: #fff;
+  border-radius: 30px;
+  border-style: outset;
+  border-width: 15px;
+
+  max-width: 76%;
+ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  min-height: 500px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin: 10px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 100%;
+    font-size: 14px;
+    width: 80%;
+    height: 200px;
+     border-style:outset;
+    border-color: #000000;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    
+  font-family: 'Segoe UI', sans-serif;
+  background: rgb(164, 70, 70);
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+
+  img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin: 10px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 100%;
+    font-size: 14px;
+    width: 80%;
+    height: 200px;
+     border-style:outset;
+    border-color: #000000;
+  }
+
+}
+
+.container {
+  background: #EDC27B;
+  max-width: 90%;
+  align-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  margin: 10px auto;
+  border-color: rgb(4, 4, 4);
+  border-radius: 50px;
+  width: 90%;
+    border-style: outset;
+
+  /* background-color: #0f1732;
+  height: 10px;
+  width: 90%;
+  margin: 10px auto; */
+}
+
+.footer {
+
+  /* text-align: center; */
+  border-color: rgb(164, 70, 70);
+  color: #000000;
+  padding: 10px;
+  background-color: #f4d9ad;
+  width: 90%;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 50px;
+    border-style: outset;
+
+  
+}
+
+/* Force full-width and readable text */
+body {
+  font-size: 150px;
+  margin: 0;
+  padding: 10px;
+  /* Adds breathing room */
+  width: 100%;
+}
+
+/* Improve form elements */
+select,
+input,
+button {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  /* Prevents iOS zooming */
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+    border-style: outset;
+
+  
+
+}
+
+/* Make buttons touch-friendly */
+button {
+  font-weight: bold;
+  cursor:grab;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 12px;
+  background: #4CAF50;
+  /* Example color */
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  border-style: outset;
+  border-color:rgb(175, 162, 133);
+  height: 200px;
+
+}
