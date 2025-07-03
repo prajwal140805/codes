@@ -1,0 +1,30 @@
+div{
+    background-color: #ac5f5f;
+    border: 2px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+}
+@media (max-width: 1200vw) {
+    div {
+        background-color: rgb(255, 0, 0);
+    }
+}
+@media(max-width: 900px) {
+    div {
+        background-color: rgb(255, 145, 0);
+    }
+}
+@media (max-width: 600px) {
+    div {
+        background-color: rgb(0, 255, 4);
+    }
+}
+@media (max-width: 300px) {
+    div {
+        background-color: rgb(0, 89, 255);
+    }
+}
+
+
+
