@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>🔐 Enter Password to View File</h2>
+    {% with messages = get_flashed_messages() %}
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    {% endwith %}
+    <form method="POST">
+        <input type="password" name="password" placeholder="Enter password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/reset">Reset Password</a>
+</body>
+</html>

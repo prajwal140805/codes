@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe958;
+    padding: 2rem;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 16px;
+    
+}
+
+input[type="password"], input[type="text"] {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 16px;
+    background: #ff6060;
+    border-radius: 50px;
+}
+
+button {
+    padding: 1rem 2rem;
+    background: #4b7bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+button:hover {
+    background: #555;
+}
+a {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    
+}
