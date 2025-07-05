@@ -28,13 +28,13 @@ void openfile()
         if (pass == keypass)
         {
 
-            cout << "*****files opened*****" << endl
-                 << endl
-                 << endl;
 
             ifstream file("data.txt");
             if (file.is_open())
             {
+            cout << "*****files opened*****" << endl
+                 << endl
+                 << endl;
                 string line;
                 while (getline(file, line))
                 {
