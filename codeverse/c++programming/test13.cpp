@@ -7,7 +7,7 @@ private:
     int a, b, c;
 
 public:
-    int d, e;
+    int d, f;
     void setData(int a1, int b1, int c1);
     void getdata()
     {
@@ -15,7 +15,7 @@ public:
         cout << "The value of b is " << b << endl;
         cout << "The value of c is " << c << endl;
         cout << "The value of d is " << d << endl;
-        cout << "The value of e is " << e << endl;
+        cout << "The value of e is " << f << endl;
     }
 };
 void employee::setData(int a1, int b1, int c1)
@@ -29,7 +29,7 @@ int main()
     employee emp;
     emp.setData(1, 2, 3);
     emp.d = 4;
-    emp.e = 5;
+    emp.f = 5;
     emp.getdata();
 
     return 0;
