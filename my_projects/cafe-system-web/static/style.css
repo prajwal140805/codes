@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: rgb(164, 70, 70);
+  background: linear-gradient(0deg, #ff0033, #f700ff);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,6 @@ h1 {
   padding: 20px;
   border-radius: 30px;
   border: 4px outset #000;
-  margin: 20px auto;
 }
 
 img {
@@ -92,7 +91,7 @@ button:hover {
   text-align: center;
   width: 95%;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 10px auto;
   word-break: break-word;
 }
 
