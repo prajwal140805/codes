@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Image</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>📄 View Data</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            padding: 2rem;
+            background: #fdfdfd;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-size: 1.3rem;
+            color:#011348
+        }
+        a {
+            margin-top: 1rem;
+            display: inline-block;
+            color: #3366cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0033cc;
+        }
+    </style>
 </head>
 <body>
-    <h2>🖼️ Protected Image</h2>
-
-    <img src="{{ image_url }}" alt="Protected Image"
-         style="max-width: 90%; height: auto; border: 2px solid #444; border-radius: 8px;">
-
-    <br><br>
-    <a href="/">Logout</a>
+    <h2>Text File Content:</h2>
+    <pre>{{ text_content }}</pre>
+    <br>
+    <a href="{{ url_for('index') }}">🔙 Go back</a>
 </body>
 </html>

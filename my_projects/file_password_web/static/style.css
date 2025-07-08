@@ -1,40 +1,67 @@
-body {
+/* Full-page gradient with tricolor vibes */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background: #ffe958;
-    padding: 2rem;
+    background: linear-gradient(135deg,   #ff003c,#ff01c4);
+    background-attachment: fixed;
+    background-size: cover;
     text-align: center;
 }
 
+/* Center the form */
 form {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 16px;
-    
+    display: inline-block; 
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+/* Input styling */
 input[type="password"], input[type="text"] {
     padding: 1rem;
     margin: 1rem;
     font-size: 16px;
-    background: #ff6060;
+    background:linear-gradient(90deg,   #ffd000,#81ff02);
+    border: none;
     border-radius: 50px;
+    color: rgb(0, 0, 0);
+    width: 250px;
+    outline: none;
 }
 
+/* Buttons */
 button {
     padding: 1rem 2rem;
-    background: #4b7bff;
+    background: linear-gradient(90deg,   #6cd3ff,#025bff);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 30px;
+    font-size: 16px;
+    margin: 0.5rem;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #555;
+    background: linear-gradient(-90deg,   #6cd3ff,#025bff);
 }
+
+/* Links like Reset Password */
 a {
     display: inline-block;
-    color: #000000;
+    margin : 1rem;
+    margin-right : 2rem;
+    margin-left : 2rem;
+    color: #000;
     text-decoration: none;
-    
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a24343;
 }
