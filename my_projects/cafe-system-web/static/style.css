@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(0deg, #ff0033, #f700ff);
+  background: linear-gradient(180deg, #000825, #00114c);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -56,17 +56,39 @@ button {
   background-color: rgb(244, 217, 173);
   text-align: center;
 }
-
 button {
-  font-weight: bold;
-  background: #4CAF50;
-  color: black;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: left 0.4s ease-in-out;
+}
+
+button:hover::before {
+  left: 130%;
 }
 
 button:hover {
-  background: rgb(0, 255, 0);
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
 #orderList {
