@@ -1,8 +1,8 @@
 #run this code only to create the files
 import os
-a=20
+a=21
 b=31
-c=10
+c=21
 d=31
 
 # for i in range(a,b):
@@ -12,9 +12,9 @@ d=31
         
         
         
-#this is to delete the files created above
-# for i in range(c,d):
-#     os.remove (f'c++programming/test{i}.cpp') 
+# this is to delete the files created above
+for i in range(c,d):
+    os.remove (f"codeverse/python programming/test{i}.cpp"  ) 
 
 
 
