@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <iomanip>
 using namespace std;
 
 struct Time {
@@ -12,13 +11,12 @@ int main() {
 
     cout << "Enter hour: ";
     cin >> t.h;
-    cout << "Enter minute: ";
+    cout << "minute: ";
     cin >> t.m;
-    cout << "Enter second: ";
+    cout << "second: ";
     cin >> t.s;
 
-    fstream file;
-    file.open("time.dat", ios::out | ios::binary);
+    fstream file("time.dat", ios::out | ios::binary);
     file.write((char*)&t, sizeof(t));
     file.close();
 
@@ -28,7 +26,7 @@ int main() {
     file.read((char*)&t, sizeof(t));
     file.close();
 
-    cout << "time is: "<<setw(2)<<setfill('0') << t.h << ":"<<setw(2) <<setfill('0')<< t.m << ":" <<setw(2)<<setfill('0')<< t.s << endl;
+    cout << "time is: " << t.h << ":" << t.m << ":" << t.s << endl;
 
     return 0;
 }
